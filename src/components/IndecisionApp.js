@@ -1,3 +1,6 @@
+/* eslint-disable object-curly-spacing */
+/* eslint-disable comma-dangle */
+/* eslint-disable arrow-parens */
 /* eslint-disable require-jsdoc */
 import React from 'react';
 import AddOption from './AddOption';
@@ -6,39 +9,47 @@ import Header from './Header';
 import Action from './Action';
 
 export default class IndecisionApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleRemoveAll = this.handleRemoveAll.bind(this);
-    this.pickRandomNumber = this.pickRandomNumber.bind(this);
-    this.addOption = this.addOption.bind(this);
-    this.handleRemoveSingleOption = this.handleRemoveSingleOption.bind(this);
-    this.state = {
-      title: 'Indecision App',
-      subTitle: 'Put your life in the hands of a computer',
-      options: [],
-    };
-  }
-  componentDidMount() {
-    console.log('Component did mount');
-  }
-  componentDidUpdate() {
-    console.log('Component did update');
-  }
-  pickRandomNumber() {
+  state = {
+    title: 'Indecision App',
+    subTitle: 'Put your life in the hands of a computer',
+    options: []
+  };
+  componentDidMount = () => {
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+      if (options) {
+        this.setState(() => ({ options }));
+      }
+    } catch (e) {
+      // do nothing
+    }
+  };
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem('options', json);
+    }
+  };
+  componentWillUnmount = () => {
+    console.log('componentWillUnmount');
+  };
+  pickRandomNumber = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     alert(this.state.options[randomNum]);
-  }
-  addOption(option) {
-    this.setState((prevState) => ({options: prevState.options.concat(option)}));
-  }
-  handleRemoveAll() {
-    this.setState(() => ({options: []}));
-  }
-  handleRemoveSingleOption(option) {
-    this.setState((prevState) => ({
-      options: prevState.options.filter((word) => word !== option),
+  };
+  addOption = option => {
+    this.setState(prevState => ({ options: prevState.options.concat(option) }));
+  };
+  handleRemoveAll = () => {
+    this.setState(() => ({ options: [] }));
+  };
+  handleRemoveSingleOption = option => {
+    this.setState(prevState => ({
+      options: prevState.options.filter(word => word !== option)
     }));
-  }
+  };
+
   render() {
     return (
       <div>

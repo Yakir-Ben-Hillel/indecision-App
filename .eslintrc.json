@@ -10,11 +10,16 @@
   },
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"],
-  "rules": {}
+  "plugins": ["babel", "react"],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-invalid-this": 0,
+    "babel/no-invalid-this": 1
+  }
 }

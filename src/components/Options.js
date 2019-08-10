@@ -5,8 +5,19 @@ import Option from './Option';
 const Options = props => {
   return (
     <div>
-      {props.isEmpty && (
-        <button onClick={props.handleRemoveAll}>Remove All</button>
+      <div className='widget-header'>
+        <h3 id='list-options'>Your options:</h3>
+        {props.isEmpty && (
+          <button
+            className='button button--remove'
+            onClick={props.handleRemoveAll}
+          >
+            Remove All
+          </button>
+        )}
+      </div>
+      {!props.isEmpty && (
+        <p id='massage'>Please add an option to get started!</p>
       )}
       {props.options.map(option => (
         <Option

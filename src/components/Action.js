@@ -4,7 +4,11 @@ import React from 'react';
 const Action = props => {
   return (
     <div>
-      <button disabled={!props.isEmpty} onClick={props.pickRandomNumber}>
+      <button
+        className='big-button'
+        disabled={!props.isEmpty}
+        onClick={props.pickRandomNumber}
+      >
         What should I do?
       </button>
     </div>

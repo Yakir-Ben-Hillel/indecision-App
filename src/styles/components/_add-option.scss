@@ -1,0 +1,29 @@
+.add-option {
+  display: flex;
+  padding: $small-rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#option-input {
+  background: $dark-blue;
+  border: none;
+  color: $off-white;
+  padding: 1.2rem;
+  border-bottom: 0.3rem solid darken($color: $dark-blue, $amount: 10%);
+  margin: 0 0 1.2rem 0;
+  flex-grow: 1;
+}
+#option-input::placeholder {
+  font-size: $small-rem;
+  color: $off-white;
+  opacity: 0.5;
+  font-weight: 200;
+}
+@media (min-width: 45rem) {
+  .add-option {
+    flex-direction: row;
+  }
+  #option-input {
+    margin: 0 1.2rem 0 0;
+  }
+}

@@ -19,9 +19,10 @@ const Options = props => {
       {!props.isEmpty && (
         <p id='massage'>Please add an option to get started!</p>
       )}
-      {props.options.map(option => (
+      {props.options.map((option, index) => (
         <Option
           key={option}
+          index={index}
           handleRemoveSingleOption={props.handleRemoveSingleOption}
           option={option}
         />

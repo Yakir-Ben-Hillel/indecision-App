@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-spacing */
+/* eslint-disable comma-dangle */
 /* eslint-disable arrow-parens */
 /* eslint-disable react/prop-types */
 /* eslint-disable require-jsdoc */
@@ -7,7 +9,6 @@ export default class AddOption extends React.Component {
   handleAddOption = e => {
     e.preventDefault();
     const given = e.target.elements.option.value.trim();
-
     if (given) {
       // The user inserted an option.
       if (this.props.options.indexOf(given) === -1) {
@@ -19,8 +20,14 @@ export default class AddOption extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleAddOption}>
-          <input type='text' name='option' placeholder='Insert option' />
+        <form className='add-option' onSubmit={this.handleAddOption}>
+          <input
+            type='text'
+            autoComplete='off'
+            id='option-input'
+            name='option'
+            placeholder='Insert option'
+          />
           <button className='button'>Add option</button>
         </form>
       </div>

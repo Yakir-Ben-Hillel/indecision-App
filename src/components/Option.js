@@ -3,8 +3,8 @@
 import React from 'react';
 const Option = props => {
   return (
-    <div>
-      <span>{props.option}</span>
+    <div className='option'>
+      <p id='option-paragraph'>{(props.index+1)+'. '+props.option}</p>
       <button
         className='button button--remove'
         onClick={() => {

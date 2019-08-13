@@ -9,10 +9,9 @@ import Header from './Header';
 import Action from './Action';
 import OptionModal from './OptionModal';
 
+
 export default class IndecisionApp extends React.Component {
   state = {
-    title: 'Indecision App',
-    subTitle: 'Put your life in the hands of a computer',
     options: [],
     selectedOption: undefined
   };
@@ -32,9 +31,6 @@ export default class IndecisionApp extends React.Component {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem('options', json);
     }
-  };
-  componentWillUnmount = () => {
-    console.log('componentWillUnmount');
   };
   clearSelectedOption = () => {
     this.setState(() => ({ selectedOption: undefined }));
@@ -59,7 +55,10 @@ export default class IndecisionApp extends React.Component {
   render() {
     return (
       <div>
-        <Header title={this.state.title} subTitle={this.state.subTitle} />
+        <Header
+          title={'Indecision App'}
+          subTitle={'Put your life in the hands of a computer'}
+        />
         <div className='container'>
           <Action
             isEmpty={this.state.options.length > 0}

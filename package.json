@@ -10,6 +10,7 @@
     "react-dom": "^16.8.6",
     "react-modal": "^3.9.1",
     "react-scripts": "3.0.1",
+    "react-tooltip": "^3.10.0",
     "validator": "^11.1.0",
     "webpack": "^4.39.1"
   },

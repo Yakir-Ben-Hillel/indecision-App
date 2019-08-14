@@ -1,8 +1,12 @@
-/* eslint-disable arrow-parens */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Option from './Option';
-const Options = props => {
+interface Ioptions {
+  options: string[];
+  isEmpty: boolean;
+  handleRemoveAll: () => void;
+  handleRemoveSingleOption: (option: string) => void;
+}
+const Options: React.FC<Ioptions> = props => {
   return (
     <div>
       <div className='widget-header'>

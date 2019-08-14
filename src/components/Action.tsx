@@ -1,7 +1,11 @@
 /* eslint-disable arrow-parens */
 /* eslint-disable react/prop-types */
 import React from 'react';
-const Action = props => {
+interface ActionProps {
+  isEmpty: boolean;
+  pickRandomNumber: () => void;
+}
+const Action: React.FC<ActionProps> = props => {
   return (
     <div>
       <button

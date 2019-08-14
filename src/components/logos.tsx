@@ -6,7 +6,7 @@ import instagramLogo from '../pictures/instagram-logo.png';
 import facebookLogo from '../pictures/facebook-logo.png';
 import linkedInLogo from '../pictures/linkedin-icon.png';
 
-const Logos = props => {
+const Logos = () => {
   return (
     <div className='logos'>
       <div id='facebook'>
@@ -22,7 +22,7 @@ const Logos = props => {
             height='47'
             alt='  '
             title='Facebook account'
-          ></img>
+          />
         </a>
       </div>
 
@@ -39,7 +39,7 @@ const Logos = props => {
             height='38'
             alt='  '
             title='Github account'
-          ></img>
+          />
         </a>
       </div>
 
@@ -56,7 +56,7 @@ const Logos = props => {
             height='39'
             alt='  '
             title='linkedIn account'
-          ></img>
+          />
         </a>
       </div>
 
@@ -72,7 +72,7 @@ const Logos = props => {
             height='46'
             alt='   '
             title='Instagram account'
-          ></img>
+          />
         </a>
       </div>
     </div>

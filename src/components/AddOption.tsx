@@ -5,8 +5,12 @@
 /* eslint-disable require-jsdoc */
 import React from 'react';
 
-export default class AddOption extends React.Component {
-  handleAddOption = e => {
+interface IaddOption {
+  options: string[];
+  addOption: (option: string) => void;
+}
+export default class AddOption extends React.Component<IaddOption> {
+  handleAddOption = (e: any) => {
     e.preventDefault();
     const given = e.target.elements.option.value.trim();
     if (given) {

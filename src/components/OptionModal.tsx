@@ -2,7 +2,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Modal from 'react-modal';
-const OptionModal = props => {
+interface Imodal {
+  selectedOption: string;
+  clearSelectedOption: () => void;
+}
+const OptionModal: React.FC<Imodal> = props => {
   return (
     <div>
       <Modal
@@ -14,7 +18,9 @@ const OptionModal = props => {
       >
         <h3 id='modal__title'>Selected Option</h3>
         <p id='modal__body'>{props.selectedOption}</p>
-        <button className='button' onClick={props.clearSelectedOption}>Okay</button>
+        <button className='button' onClick={props.clearSelectedOption}>
+          Okay
+        </button>
       </Modal>
     </div>
   );

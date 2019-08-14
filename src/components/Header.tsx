@@ -2,7 +2,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Logos from './logos';
-const Header = props => {
+interface Iheader {
+  title: string;
+  subTitle: string;
+}
+const Header: React.FC<Iheader> = props => {
   return (
     <div className='header'>
       <div className='container'>

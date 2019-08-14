@@ -1,7 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable arrow-parens */
 import React from 'react';
-const Option = props => {
+interface Ioption{
+  option:string,
+  index:number,
+  handleRemoveSingleOption:(option:string)=>void
+}
+const Option:React.FC<Ioption> = props => {
   return (
     <div className='option'>
       <p id='option-paragraph'>{(props.index+1)+'. '+props.option}</p>
